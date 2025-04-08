@@ -6,18 +6,50 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <title>Error</title>
+    <meta charset="UTF-8">
+    <title>Квест</title>
+    <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <%--<style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        footer {
+            flex-shrink: 0;
+        }
+    </style>--%>
 </head>
 <body>
+
 <%@ include file="header.jsp" %>
-<div class="text-center text-muted small">
-    Session ID: <%= session.getId() %><br>
-    Player: <c:out value="${sessionScope.PLAYER_NAME}"/><br>
-    Games played: <c:out value="${sessionScope.GAMES_PLAYED}"/>
-</div>
+
+<main>
+    <div class="container my-5">
+        <div class="card shadow mx-auto" style="max-width: 600px;">
+            <div class="card-body text-center">
+                <h2 class="card-title">Вопрос или финал</h2>
+                <button class="btn btn-primary">Ответ</button>
+            </div>
+        </div>
+    </div>
+</main>
+
 <%@ include file="footer.jsp" %>
+
 </body>
 </html>
