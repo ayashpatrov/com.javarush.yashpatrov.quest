@@ -12,7 +12,9 @@
 <head>
     <title>Пролог</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/common.css" rel="stylesheet">
+    <style>
+        <%@include file="css/common.css"%>
+    </style>
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -37,13 +39,7 @@
             </div>
         </div>
     </div>
-    <div class="text-center text-muted small">
-        Session ID: <%= session.getId() %><br>
-        Player: <c:out value="${sessionScope.PLAYER_NAME}"/><br>
-        Games played: <c:out value="${sessionScope.GAMES_PLAYED}"/>
-    </div>
 </main>
 <%@ include file="footer.jsp" %>
 </body>
-
 </html>

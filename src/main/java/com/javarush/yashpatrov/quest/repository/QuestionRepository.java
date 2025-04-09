@@ -30,13 +30,13 @@ public class QuestionRepository {
         List<Question> question = questionContainer
                 .getQuestions()
                 .stream()
-                .filter(q -> (q.getAnswers().stream().anyMatch(a -> a.getId() == answerId))).collect(Collectors.toList());
+                .filter(q -> (q.getAnswers().stream().anyMatch(a -> a.getId() == answerId))).toList();
         if (question.isEmpty()) {
             return null;
         } else if (question.size() > 1) {
             throw new RuntimeException(String.format("В базе содержится более одного вопроса с одинаковыми ответами c id = %d", answerId));
         } else {
-            List<Answer> answers = question.get(0).getAnswers().stream().filter(a -> a.getId() == answerId).collect(Collectors.toList());
+            List<Answer> answers = question.get(0).getAnswers().stream().filter(a -> a.getId() == answerId).toList();
             if (answers.isEmpty()) {
                 return null;
             } else if (answers.size() > 1) {

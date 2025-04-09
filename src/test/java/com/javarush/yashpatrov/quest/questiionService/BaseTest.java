@@ -8,7 +8,7 @@ import java.util.List;
 
 public class BaseTest {
     public Question questionWithAnswers = new Question("Вопрос", 1,
-            List.of(new Answer(1, "text", 2),
+            List.of(new Answer(1, "text", 4),
                     new Answer(2, "text", 3))
     );
     public Question questionWithDuplicateAnswers = new Question("Вопрос", 2,
@@ -19,6 +19,7 @@ public class BaseTest {
             List.of(new Answer(1, "text", 2),
                     new Answer(5, "text", 3))
     );
-    public int answerDoesntExistId = -1;
     public Question questionWithoutAnswers = new Question("Вопрос", 4, new ArrayList<>());
+    public int answerDoesntExistId = -1;
+    public int existsAnswerId = 1;
 }

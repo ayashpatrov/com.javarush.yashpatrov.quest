@@ -11,28 +11,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Квест</title>
-    <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <%--<style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-
-        main {
-            flex: 1 0 auto;
-        }
-
-        footer {
-            flex-shrink: 0;
-        }
-    </style>--%>
+    <style>
+        <%@include file="css/common.css"%>
+    </style>
 </head>
 <body>
 
@@ -46,6 +28,13 @@
                 <button class="btn btn-primary">Ответ</button>
             </div>
         </div>
+
+    </div>
+    <div class="text-center text-muted small">
+        Session ID: <%= session.getId() %><br>
+        Player: <c:out value="${sessionScope.PLAYER_NAME}"/><br>
+        Games played: <c:out value="${sessionScope.GAMES_PLAYED}"/><br>
+        CSS: <c:out value="${pageContext.request.contextPath}/css/common.css"/>
     </div>
 </main>
 

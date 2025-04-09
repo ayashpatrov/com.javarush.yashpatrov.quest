@@ -3,9 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
-<head><title>Question</title>
-    <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet">
+<head><title>Квест</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        <%@include file="css/common.css"%>
+    </style>
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -45,12 +47,6 @@
                 </c:choose>
             </div>
         </div>
-    </div>
-    <div class="text-center text-muted small">
-        Session ID: <%= session.getId() %><br>
-        Player: <c:out value="${sessionScope.PLAYER_NAME}"/><br>
-        Games played: <c:out value="${sessionScope.GAMES_PLAYED}"/>
-        <c:out value="${pageContext.request.contextPath}/css/common.css"/>
     </div>
 </main>
 
